@@ -1,0 +1,32 @@
+[
+    {
+        "joke":"joke A",
+        "likes": 20,
+        "dislikes": 10,
+    },
+    {
+        "joke":"joke B",
+        "likes": 20,
+        "dislikes": 10,
+    },
+    {
+        "joke":"joke C",
+        "likes": 20,
+        "dislikes": 10,
+    },
+    {
+        "joke":"joke D",
+        "likes": 20,
+        "dislikes": 10,
+    },
+    {
+        "joke":"joke E",
+        "likes": 20,
+        "dislikes": 10,
+    },
+    {
+        "joke":"joke F",
+        "likes": 20,
+        "dislikes": 10,
+    },
+]
