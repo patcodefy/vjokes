@@ -9,18 +9,29 @@
 import UIKit
 
 class Jokes:Codable {
+    internal let fileName: String
+    internal let fileType: String
     
-     func getJokes () -> [Any]{
-        var jokesArray = [Any] ()
-        if let jokesFilePath = Bundle.main.path(forResource: "JokesData", ofType: "json") {
-            let url = URL(fileURLWithPath: jokesFilePath)
-            do {
-                let jokesData = try Data(contentsOf: url)
-                jokesArray = try (JSONSerialization.jsonObject(with: jokesData, options: .mutableContainers) as? [Any] ?? [])
-                } catch {
-                print (error)
-            }
+    init(fileName: String, fileType: String) {
+        self.fileName = fileName
+        self.fileType = fileType
+    }
+    func getJokes () -> [Joke]{
+        guard let filePath = Bundle.main.path(forResource: self.fileName, ofType: self.fileType) else {
+            return [Joke]()
         }
+        
+        var jokesArray = [Joke]()
+        let url = URL(fileURLWithPath: filePath)
+        do {
+            let jsonDecoder = JSONDecoder()
+            let jokesData = try Data(contentsOf: url)
+            jokesArray = try jsonDecoder.decode([Joke].self, from: jokesData)
+            //print (jokesArray)
+        } catch {
+            print (error)
+        }
+            
         return jokesArray
     }
    

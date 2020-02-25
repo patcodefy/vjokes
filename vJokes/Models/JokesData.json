@@ -1,32 +1,44 @@
 [
     {
         "joke":"joke A",
-        "likes": 20,
-        "dislikes": 10,
+        "upVotes": 20,
+        "downVotes": 10,
+        "reports": 0,
+        "shares": 1
     },
     {
         "joke":"joke B",
-        "likes": 20,
-        "dislikes": 10,
+        "upVotes": 20,
+        "downVotes": 10,
+        "reports": 0,
+        "shares": 1
     },
     {
         "joke":"joke C",
-        "likes": 20,
-        "dislikes": 10,
+        "upVotes": 20,
+        "downVotes": 10,
+        "reports": 0,
+        "shares": 1
     },
     {
         "joke":"joke D",
-        "likes": 20,
-        "dislikes": 10,
+        "upVotes": 20,
+        "downVotes": 10,
+        "reports": 0,
+        "shares": 1
     },
     {
         "joke":"joke E",
-        "likes": 20,
-        "dislikes": 10,
+        "upVotes": 20,
+        "downVotes": 10,
+        "reports": 0,
+        "shares": 1
     },
     {
         "joke":"joke F",
-        "likes": 20,
-        "dislikes": 10,
+        "upVotes": 20,
+        "downVotes": 10,
+        "reports": 0,
+        "shares": 1
     },
 ]

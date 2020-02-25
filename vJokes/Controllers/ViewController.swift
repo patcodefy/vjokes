@@ -8,34 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, JokeDelegate{
     
     
-    
+    var jokes:[Joke] = []
+    var index:Int?
+    let jokesRequest = Jokes(fileName: "JokesData", fileType: "json")
     @IBOutlet weak var jokesUILabel: UILabel!
-    let jokes = Jokes ()
-    
-    
     override func viewDidLoad() {
         
-        super.viewDidLoad()        
-    }
-    @objc func displayNewJoke(_ sender:UITapGestureRecognizer) {
-        jokesUILabel.text = getJoke()
+        super.viewDidLoad()
+        jokes = jokesRequest.getJokes()
+        //print (jokesRequest.getJokes())
+        self.printJoke(index: 0)
+        
     }
     
-    func newJokeTap(){
-        let newJoke = UITapGestureRecognizer(target: self, action: #selector(self.displayNewJoke(_:)))
-        self.jokesUILabel.isUserInteractionEnabled = true
-        self.jokesUILabel.addGestureRecognizer(newJoke)
+    func printJoke(index: Int) {
+        jokesUILabel.text = self.randomJoke()
     }
-    func getJoke() -> String{
-        let jokes = [
-            "Joke A",
-            "Joke B"
-        ]
-        return jokes[1]
+    func randomJoke() -> String {
+        print(jokes.count)
+        return jokes[Int.random(in: 0 ... jokes.count-1)].joke
     }
+    
+    
 
 }
 
