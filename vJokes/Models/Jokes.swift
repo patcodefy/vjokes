@@ -9,8 +9,8 @@
 import UIKit
 
 class Jokes:Codable {
-    internal let fileName: String
-    internal let fileType: String
+    let fileName: String
+    let fileType: String
     
     init(fileName: String, fileType: String) {
         self.fileName = fileName
