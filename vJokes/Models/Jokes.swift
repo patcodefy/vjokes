@@ -11,28 +11,17 @@ import UIKit
 class Jokes:Codable {
     let fileName: String
     let fileType: String
-    
     init(fileName: String, fileType: String) {
         self.fileName = fileName
         self.fileType = fileType
     }
     func getJokes () -> [Joke]{
-        guard let filePath = Bundle.main.path(forResource: self.fileName, ofType: self.fileType) else {
-            return [Joke]()
-        }
-        
-        var jokesArray = [Joke]()
-        let url = URL(fileURLWithPath: filePath)
-        do {
-            let jsonDecoder = JSONDecoder()
-            let jokesData = try Data(contentsOf: url)
-            jokesArray = try jsonDecoder.decode([Joke].self, from: jokesData)
-            //print (jokesArray)
-        } catch {
-            print (error)
-        }
-            
-        return jokesArray
+        return LocalStore.get(type: [Joke].self, key: "jokes") ?? []
+    }
+    func updateJokes(newJoke:Joke) {
+        var jokes = getJokes()
+        jokes.append(newJoke)
+        LocalStore.setItem(item: jokes, key: "jokes")
     }
    
 }

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43986CF52406C7510032FFCC /* JokesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43986CF42406C7510032FFCC /* JokesController.swift */; };
+		4396383F240EA81E003A6665 /* UpdateJokesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396383E240EA81E003A6665 /* UpdateJokesController.swift */; };
+		43963842240EBF6B003A6665 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43963841240EBF6B003A6665 /* LocalStore.swift */; };
+		43986CF52406C7510032FFCC /* DisplayJokesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43986CF42406C7510032FFCC /* DisplayJokesController.swift */; };
 		EB32E7A22401B4CF004122C0 /* Jokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32E7A12401B4CF004122C0 /* Jokes.swift */; };
 		EBA717912400DF47002FB53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA717902400DF47002FB53C /* AppDelegate.swift */; };
 		EBA717932400DF47002FB53C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA717922400DF47002FB53C /* SceneDelegate.swift */; };
@@ -20,7 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		43986CF42406C7510032FFCC /* JokesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesController.swift; sourceTree = "<group>"; };
+		4396383E240EA81E003A6665 /* UpdateJokesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateJokesController.swift; sourceTree = "<group>"; };
+		43963841240EBF6B003A6665 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		43986CF42406C7510032FFCC /* DisplayJokesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayJokesController.swift; sourceTree = "<group>"; };
 		EB32E7A12401B4CF004122C0 /* Jokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jokes.swift; sourceTree = "<group>"; };
 		EBA7178D2400DF47002FB53C /* vJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA717902400DF47002FB53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		43963840240EBF57003A6665 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				43963841240EBF6B003A6665 /* LocalStore.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		EB32E79C2401AEED004122C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +85,8 @@
 		EB32E79E2401AF10004122C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				43986CF42406C7510032FFCC /* JokesController.swift */,
+				43986CF42406C7510032FFCC /* DisplayJokesController.swift */,
+				4396383E240EA81E003A6665 /* UpdateJokesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,6 +118,7 @@
 		EBA7178F2400DF47002FB53C /* vJokes */ = {
 			isa = PBXGroup;
 			children = (
+				43963840240EBF57003A6665 /* Support */,
 				43217C5A24058F4C00C69754 /* Views */,
 				43217C572405757300C69754 /* Protocols */,
 				EB32E7A02401B132004122C0 /* UI */,
@@ -194,8 +208,10 @@
 				EBA717952400DF47002FB53C /* ViewController.swift in Sources */,
 				EB32E7A22401B4CF004122C0 /* Jokes.swift in Sources */,
 				EBA717AB2400FAFF002FB53C /* Joke.swift in Sources */,
+				43963842240EBF6B003A6665 /* LocalStore.swift in Sources */,
+				4396383F240EA81E003A6665 /* UpdateJokesController.swift in Sources */,
 				EBA717912400DF47002FB53C /* AppDelegate.swift in Sources */,
-				43986CF52406C7510032FFCC /* JokesController.swift in Sources */,
+				43986CF52406C7510032FFCC /* DisplayJokesController.swift in Sources */,
 				EBA717932400DF47002FB53C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

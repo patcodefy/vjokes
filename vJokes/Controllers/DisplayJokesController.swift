@@ -7,9 +7,13 @@
 //
 
 import UIKit
-class JokesController{
+class DisplayJokesController{
     internal let jokesRequest = Jokes(fileName: "JokesData", fileType: "json")
-    internal lazy var jokes:[Joke] = jokesRequest.getJokes()
+    internal var jokes: [Joke] {
+        get {
+            return jokesRequest.getJokes()
+        }
+    }
     internal var index = 0
     
     func printRandomJoke() -> String {
