@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     
     let displayJokes = DisplayJokesController ()
     let updateJoke = UpdateJokesController()
+    let jokesRequest = Jokes()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.displayJokeOnLabel()
@@ -29,8 +30,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func shareBtnTapped(_ sender: UIButton) {
-        let newJoke = Joke(joke: "new joke", upVotes: 0, downVotes: 0, reports: 0, shares: 0)
-        updateJoke.addJoke(joke: newJoke)
+//        let newJoke = Joke(joke: "new joke", upVotes: 0, downVotes: 0, reports: 0, shares: 0)
+//        updateJoke.addJoke(joke: newJoke)
+        jokesRequest.writeJokes(author: "pat")
+       
     }
     
     @IBAction func reportBtnTapped(_ sender: UIButton) {
