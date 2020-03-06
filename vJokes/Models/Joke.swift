@@ -8,10 +8,13 @@
 
 import UIKit
 
-struct Joke: Codable {
+struct Joke{
     var joke: String
-    var upVotes: Int
-    var downVotes: Int
-    var reports: Int
-    var shares: Int
+    var votes: Int
+    var hide: Bool
+    init(joke: String, votes: Int, hide: Bool) {
+        self.joke = joke
+        self.votes = votes
+        self.hide = hide
+    }
 }
