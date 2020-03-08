@@ -11,51 +11,59 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="vJokes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" colorLabel="IBBuiltInLabel-Blue">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="5HE-Q4-8WK">
-                                <rect key="frame" x="30" y="154" width="260" height="260"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDL-ce-J0s">
+                                <rect key="frame" x="-102" y="-90" width="516" height="757"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIX-OA-Jk9">
+                                        <rect key="frame" x="121" y="89" width="283" height="569"/>
+                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNN-3D-eYs">
+                                        <rect key="frame" x="102" y="186" width="323" height="385"/>
+                                        <connections>
+                                            <action selector="printJokeUIBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="atZ-Ju-QFb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41590983959337768" green="0.69674360718647799" blue="0.96620899438858032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="5HE-Q4-8WK" secondAttribute="height" multiplier="1:1" id="7qf-gQ-ELL"/>
+                                    <constraint firstAttribute="trailing" secondItem="PNN-3D-eYs" secondAttribute="trailing" constant="116" id="EZm-SZ-52Y"/>
+                                    <constraint firstItem="IIX-OA-Jk9" firstAttribute="leading" secondItem="EDL-ce-J0s" secondAttribute="leading" constant="121" id="MCB-pn-pc8"/>
+                                    <constraint firstAttribute="bottom" secondItem="PNN-3D-eYs" secondAttribute="bottom" constant="186" id="Md4-2L-6SP"/>
+                                    <constraint firstItem="PNN-3D-eYs" firstAttribute="leading" secondItem="EDL-ce-J0s" secondAttribute="leading" constant="117" id="Odb-l2-wyY"/>
+                                    <constraint firstAttribute="bottom" secondItem="IIX-OA-Jk9" secondAttribute="bottom" constant="99" id="Uto-kC-5Md"/>
+                                    <constraint firstAttribute="trailing" secondItem="IIX-OA-Jk9" secondAttribute="trailing" constant="112" id="dyl-Ol-51L"/>
+                                    <constraint firstItem="IIX-OA-Jk9" firstAttribute="top" secondItem="EDL-ce-J0s" secondAttribute="top" constant="89" id="jJ5-CA-D6D"/>
+                                    <constraint firstItem="PNN-3D-eYs" firstAttribute="top" secondItem="EDL-ce-J0s" secondAttribute="top" constant="186" id="riO-N9-DUn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqg-M2-l2L" userLabel="Print Joke Button">
-                                <rect key="frame" x="30" y="154" width="260" height="260"/>
-                                <connections>
-                                    <action selector="displayJoke:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i3D-y2-KhS"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="1" green="0.75095223223303775" blue="0.63221737061610872" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Cqg-M2-l2L" firstAttribute="trailing" secondItem="5HE-Q4-8WK" secondAttribute="trailing" id="5TC-WT-t7s"/>
-                            <constraint firstItem="Cqg-M2-l2L" firstAttribute="leading" secondItem="5HE-Q4-8WK" secondAttribute="leading" id="Hb7-s9-lfa"/>
-                            <constraint firstItem="5HE-Q4-8WK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KU5-rm-6MJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5HE-Q4-8WK" secondAttribute="trailing" constant="30" id="Y69-jy-2Yl"/>
-                            <constraint firstItem="Cqg-M2-l2L" firstAttribute="bottom" secondItem="5HE-Q4-8WK" secondAttribute="bottom" id="nK1-bN-uXQ"/>
-                            <constraint firstItem="5HE-Q4-8WK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="pcv-1b-heS"/>
-                            <constraint firstItem="Cqg-M2-l2L" firstAttribute="top" secondItem="5HE-Q4-8WK" secondAttribute="top" id="tVP-ww-6a8"/>
+                            <constraint firstAttribute="trailing" secondItem="EDL-ce-J0s" secondAttribute="trailing" constant="-94" id="5Qz-eo-v47"/>
+                            <constraint firstItem="EDL-ce-J0s" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-90" id="We5-vg-0eX"/>
+                            <constraint firstAttribute="bottom" secondItem="EDL-ce-J0s" secondAttribute="bottom" constant="-99" id="cAE-6Z-yqE"/>
+                            <constraint firstItem="EDL-ce-J0s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-102" id="ho6-rR-3Vg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="jokesUILabel" destination="5HE-Q4-8WK" id="U2F-WI-KQY"/>
+                        <outlet property="jokesUILabel" destination="IIX-OA-Jk9" id="mUQ-KV-oXU"/>
+                        <outlet property="printUIButton" destination="PNN-3D-eYs" id="48x-QK-Amp"/>
+                        <outlet property="viewUIView" destination="EDL-ce-J0s" id="DSG-0w-NL3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="125.89285714285714"/>
+            <point key="canvasLocation" x="136.875" y="125.70422535211267"/>
         </scene>
     </scenes>
 </document>

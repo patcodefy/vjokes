@@ -10,24 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    @IBOutlet weak var viewUIView: UIView!
     @IBOutlet weak var jokesUILabel: UILabel!
-    @IBOutlet weak var shareUILabel: UILabel!
-    @IBOutlet weak var reportUILabel: UILabel!
-    @IBOutlet weak var downVoteUILabel: UILabel!
-    @IBOutlet weak var upVoteUILabel: UILabel!
+    @IBOutlet weak var printUIButton: UIButton!
     let jokesRequest = Jokes()
     var jokesData : [[String: Any]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         jokesRequest.getJokes(completionHandler: {(jokes) in
+            self.randomColor()
             self.jokesUILabel.text = jokes.randomElement()?["joke"] as? String
             for joke in jokes {
                 self.jokesData.append(joke)
             }
         })
-        
     }
-    @IBAction func displayJoke(_ sender: UIButton) {
+    @IBAction func printJokeUIBtn(_ sender: UIButton) {
+        self.randomColor()
         self.jokesUILabel.text = randomJoke()
     }
     
@@ -37,15 +37,19 @@ class ViewController: UIViewController {
         }
         return randomJoke
     }
-    
+    func randomColor (){
+        self.printUIButton.backgroundColor = UIColor.init(red: 125, green: 125, blue: 125, alpha: 1.0)
+        self.viewUIView.backgroundColor = UIColor.init(red: 125, green: 125, blue: 125, alpha: 1.0)
+        self.jokesUILabel.backgroundColor = UIColor.init(red: 125, green: 125, blue: 125, alpha: 1.0)
+    }
     
     // This func will be used when I add feature to submit jokes
-    //    @IBAction func shareBtnTapped(_ sender: UIButton) {
-    //        jokesRequest.writeJokes(jokeData: [
-    //            "joke": "",
-    //            "votes": 0,
-    //            "hide": false
-    //        ])
-    //    }
+//    func addJokes() {
+//        jokesRequest.writeJokes(jokeData: [
+//            "joke": "",
+//            "votes": 0,
+//            "hide": false
+//        ])
+//    }
 }
 

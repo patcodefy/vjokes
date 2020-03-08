@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4356E9B92410061D0079ED0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4356E9B82410061D0079ED0D /* GoogleService-Info.plist */; };
-		436A3EB4241331210057E9B5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A3EB3241331210057E9B5 /* UILabel.swift */; };
 		43963842240EBF6B003A6665 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43963841240EBF6B003A6665 /* LocalStore.swift */; };
 		A2CFE6E2328B29D263FEC136 /* Pods_vJokes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADFA67942126D2695A64FAF /* Pods_vJokes.framework */; };
 		EB32E7A22401B4CF004122C0 /* Jokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32E7A12401B4CF004122C0 /* Jokes.swift */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		3F7CFB432FB94EFE929A2D90 /* Pods-vJokes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vJokes.debug.xcconfig"; path = "Target Support Files/Pods-vJokes/Pods-vJokes.debug.xcconfig"; sourceTree = "<group>"; };
 		4356E9B82410061D0079ED0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		436A3EB3241331210057E9B5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		43963841240EBF6B003A6665 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		B676B72D3E483B10FB5E5619 /* Pods-vJokes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vJokes.release.xcconfig"; path = "Target Support Files/Pods-vJokes/Pods-vJokes.release.xcconfig"; sourceTree = "<group>"; };
 		EADFA67942126D2695A64FAF /* Pods_vJokes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vJokes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,14 +71,6 @@
 				EB32E7A12401B4CF004122C0 /* Jokes.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		436A3EB2241331110057E9B5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				436A3EB3241331210057E9B5 /* UILabel.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		43963840240EBF57003A6665 /* Support */ = {
@@ -144,7 +134,6 @@
 		EBA7178F2400DF47002FB53C /* vJokes */ = {
 			isa = PBXGroup;
 			children = (
-				436A3EB2241331110057E9B5 /* Extensions */,
 				4356E9BA24100D610079ED0D /* Network */,
 				4356E9B82410061D0079ED0D /* GoogleService-Info.plist */,
 				43963840240EBF57003A6665 /* Support */,
@@ -288,7 +277,6 @@
 			files = (
 				EBA717952400DF47002FB53C /* ViewController.swift in Sources */,
 				EB32E7A22401B4CF004122C0 /* Jokes.swift in Sources */,
-				436A3EB4241331210057E9B5 /* UILabel.swift in Sources */,
 				EBA717AB2400FAFF002FB53C /* Joke.swift in Sources */,
 				43963842240EBF6B003A6665 /* LocalStore.swift in Sources */,
 				EBA717912400DF47002FB53C /* AppDelegate.swift in Sources */,
