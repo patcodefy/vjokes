@@ -27,23 +27,6 @@ class ViewController: UIViewController {
         })
         
     }
-    
-    @IBAction func shareBtnTapped(_ sender: UIButton) {
-//        jokesRequest.writeJokes(jokeData: [
-//            "joke": ,
-//            "votes": 0,
-//            "hide": false
-//        ])
-    }
-    
-    @IBAction func reportBtnTapped(_ sender: UIButton) {
-        
-    }
-    @IBAction func downVoteBtnTapped(_ sender: UIButton) {
-    }
-    @IBAction func upVoteBtnTapped(_ sender: UIButton) {
-    }
-    
     @IBAction func displayJoke(_ sender: UIButton) {
         self.jokesUILabel.text = randomJoke()
     }
@@ -55,5 +38,14 @@ class ViewController: UIViewController {
         return randomJoke
     }
     
+    
+    // This func will be used when I add feature to submit jokes
+    //    @IBAction func shareBtnTapped(_ sender: UIButton) {
+    //        jokesRequest.writeJokes(jokeData: [
+    //            "joke": "",
+    //            "votes": 0,
+    //            "hide": false
+    //        ])
+    //    }
 }
 
