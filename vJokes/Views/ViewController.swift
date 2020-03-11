@@ -14,12 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewUIView: UIView!
     @IBOutlet weak var jokesUILabel: UILabel!
     @IBOutlet weak var printUIButton: UIButton!
+    @IBOutlet weak var votesUILabel: UILabel!
     let jokesRequest = Jokes()
     var jokesData : [[String: Any]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         jokesRequest.getJokes(completionHandler: {(jokes) in
-            self.randomColor()
             self.jokesUILabel.text = jokes.randomElement()?["joke"] as? String
             for joke in jokes {
                 self.jokesData.append(joke)
@@ -27,21 +27,24 @@ class ViewController: UIViewController {
         })
     }
     @IBAction func printJokeUIBtn(_ sender: UIButton) {
-        self.randomColor()
-        self.jokesUILabel.text = randomJoke()
+        if let random = randomJoke() {
+            self.jokesUILabel.text = random["joke"] as? String ?? ""
+            self.votesUILabel.text = ("\(random["votes"] as? Int ?? 0)")
+        }
     }
     
-    func randomJoke () -> String {
-        guard let randomJoke = self.jokesData.randomElement()?["joke"] as? String else {
-            return " "
+    func randomJoke () -> [String:Any]? {
+        var randomJoke:[String:Any]? = [:]
+        if self.jokesData.count < 0 {
+            return randomJoke
         }
+        randomJoke = [
+        "joke": self.jokesData.randomElement()?["joke"] as Any,
+        "votes": self.jokesData.randomElement()?["votes"] as Any
+        ] as [String : Any]
         return randomJoke
     }
-    func randomColor (){
-        self.printUIButton.backgroundColor = UIColor.init(red: 125, green: 125, blue: 125, alpha: 1.0)
-        self.viewUIView.backgroundColor = UIColor.init(red: 125, green: 125, blue: 125, alpha: 1.0)
-        self.jokesUILabel.backgroundColor = UIColor.init(red: 125, green: 125, blue: 125, alpha: 1.0)
-    }
+   
     
     // This func will be used when I add feature to submit jokes
 //    func addJokes() {
