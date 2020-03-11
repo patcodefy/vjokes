@@ -19,15 +19,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         jokesRequest.getJokes(completionHandler: {(jokes) in
-            self.randomColor()
+            
             self.jokesUILabel.text = jokes.randomElement()?["joke"] as? String
             for joke in jokes {
                 self.jokesData.append(joke)
             }
+            
         })
     }
     @IBAction func printJokeUIBtn(_ sender: UIButton) {
-        self.randomColor()
+        //self.randomColor()
         self.jokesUILabel.text = randomJoke()
     }
     
@@ -37,11 +38,7 @@ class ViewController: UIViewController {
         }
         return randomJoke
     }
-    func randomColor (){
-        self.printUIButton.backgroundColor = UIColor.init(red: 125, green: 125, blue: 125, alpha: 1.0)
-        self.viewUIView.backgroundColor = UIColor.init(red: 125, green: 125, blue: 125, alpha: 1.0)
-        self.jokesUILabel.backgroundColor = UIColor.init(red: 125, green: 125, blue: 125, alpha: 1.0)
-    }
+    
     
     // This func will be used when I add feature to submit jokes
 //    func addJokes() {
