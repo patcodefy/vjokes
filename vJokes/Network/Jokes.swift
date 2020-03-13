@@ -13,7 +13,6 @@ import FirebaseFirestore
 class Jokes{
     let collection = "jokes"
     let db = Firestore.firestore()
-    
     func writeJokes (jokeData: [String:Any]){
         var ref: DocumentReference? = nil
         ref = db.collection(self.collection).addDocument(data: jokeData)
@@ -42,7 +41,6 @@ class Jokes{
         
     }
     func updateVotes (value: String, votes: Int){
-        print ("function called")
         db.collection(self.collection)
             .whereField("joke", isEqualTo: value)
         .getDocuments() { (querySnapshot, err) in
@@ -51,7 +49,6 @@ class Jokes{
                 return
             }
             if let document = querySnapshot!.documents.first {
-                print (document.documentID)
                 document.reference.updateData([
                         "votes": votes
                 ])

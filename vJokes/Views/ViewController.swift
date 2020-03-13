@@ -43,8 +43,7 @@ class ViewController: UIViewController {
             //self.votes = self.jokesData[self.random!]["votes"] as? Int ?? 0
             self.votes = self.votes + 1
             self.votesUILabel.text = ("\(self.votes)")
-            print ("random => \(self.random!)")
-            print ("Passed joke => " , self.jokesData[self.random!]["joke"] as? String ?? "")
+            self.labelRed()
             self.jokesRequest.updateVotes(value: self.jokesData[self.random!]["joke"] as? String ?? "", votes: self.votes)
             sender.isEnabled = false
             dislikeUIButton.isEnabled = true
@@ -55,7 +54,7 @@ class ViewController: UIViewController {
             //self.votes = self.jokesData[self.random!]["votes"] as? Int ?? 0
             self.votes = self.votes - 1
             self.votesUILabel.text = ("\(self.votes)")
-            print ("random => \(self.random!)")
+            self.labelRed()
             self.jokesRequest.updateVotes(value: self.jokesData[self.random!]["joke"] as? String ?? "", votes: self.votes)
             sender.isEnabled = false
             likeUIButton.isEnabled = true
@@ -70,6 +69,17 @@ class ViewController: UIViewController {
                 self.jokesUILabel.text = self.joke
                 self.votesUILabel.text = ("\(self.votes)")
             }
+            self.labelRed()
+            likeUIButton.isEnabled = true
+            dislikeUIButton.isEnabled = true
+        }
+    }
+    func labelRed (){
+        if self.votes < 0 {
+            self.votesUILabel.textColor = self.dislikeUIButton.tintColor
+        }
+        else {
+            self.votesUILabel.textColor = self.likeUIButton.tintColor
         }
     }
 }
