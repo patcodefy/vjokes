@@ -41,4 +41,22 @@ class Jokes{
         }
         
     }
+    func updateVotes (value: String, votes: Int){
+        print ("function called")
+        db.collection(self.collection)
+            .whereField("joke", isEqualTo: value)
+        .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Document not found. \(err)")
+                return
+            }
+            if let document = querySnapshot!.documents.first {
+                print (document.documentID)
+                document.reference.updateData([
+                        "votes": votes
+                ])
+            }
+            
+        }
+    }
 }
