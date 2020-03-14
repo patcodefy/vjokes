@@ -13,7 +13,6 @@ import FirebaseFirestore
 class Jokes{
     let collection = "jokes"
     let db = Firestore.firestore()
-    
     func writeJokes (jokeData: [String:Any]){
         var ref: DocumentReference? = nil
         ref = db.collection(self.collection).addDocument(data: jokeData)
@@ -40,5 +39,21 @@ class Jokes{
                 completionHandler(jokesData)
         }
         
+    }
+    func updateVotes (value: String, votes: Int){
+        db.collection(self.collection)
+            .whereField("joke", isEqualTo: value)
+        .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Document not found. \(err)")
+                return
+            }
+            if let document = querySnapshot!.documents.first {
+                document.reference.updateData([
+                        "votes": votes
+                ])
+            }
+            
+        }
     }
 }
