@@ -39,24 +39,50 @@ class ViewController: UIViewController {
     }
     
     @IBAction func likeUIButton(_ sender: UIButton) {
+        let voteCopy = self.votes
+        print ("votecopy like => \(voteCopy)")
         if (self.random != nil) {
-            //self.votes = self.jokesData[self.random!]["votes"] as? Int ?? 0
-            self.votes = self.votes + 1
+            if self.votes == 0 || self.votes == -1 {
+                
+                self.votes = 1
+                print ("votecopy like => \(voteCopy)")
+                if voteCopy != self.votes {
+                    sender.isEnabled = false
+                }
+                
+            } else {
+                self.votes = self.votes + 1
+                self.disableBtn(disableBtn: sender, enabledBtn: dislikeUIButton)
+            }
             self.votesUILabel.text = ("\(self.votes)")
             self.labelRed()
             self.jokesRequest.updateVotes(value: self.jokesData[self.random!]["joke"] as? String ?? "", votes: self.votes)
-            sender.isEnabled = false
+            self.disableBtn(disableBtn: sender, enabledBtn: dislikeUIButton)
+            
             dislikeUIButton.isEnabled = true
         }
     }
     @IBAction func dislikeUIButton(_ sender: UIButton) {
+        let voteCopy = self.votes
+        print ("votecopy dislike => \(voteCopy)")
         if (self.random != nil) {
-            //self.votes = self.jokesData[self.random!]["votes"] as? Int ?? 0
-            self.votes = self.votes - 1
+            if self.votes == 0 || self.votes == 1 {
+                self.votes = -1
+                print ("votecopy dislike => \(voteCopy)")
+                if voteCopy != self.votes {
+                    sender.isEnabled = false
+                }
+                
+            } else {
+                self.disableBtn(disableBtn: sender, enabledBtn: likeUIButton)
+                self.votes = self.votes - 1
+            }
+            
             self.votesUILabel.text = ("\(self.votes)")
             self.labelRed()
             self.jokesRequest.updateVotes(value: self.jokesData[self.random!]["joke"] as? String ?? "", votes: self.votes)
-            sender.isEnabled = false
+            self.disableBtn(disableBtn: sender, enabledBtn: likeUIButton)
+            
             likeUIButton.isEnabled = true
         }
     }
@@ -80,6 +106,11 @@ class ViewController: UIViewController {
         }
         else {
             self.votesUILabel.textColor = self.likeUIButton.tintColor
+        }
+    }
+    func disableBtn (disableBtn: UIButton, enabledBtn: UIButton){
+        if enabledBtn.isEnabled {
+            disableBtn.isEnabled = false
         }
     }
 }
