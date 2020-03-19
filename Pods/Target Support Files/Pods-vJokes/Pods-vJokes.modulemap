@@ -1,0 +1,6 @@
+framework module Pods_vJokes {
+  umbrella header "Pods-vJokes-umbrella.h"
+
+  export *
+  module * { export * }
+}
