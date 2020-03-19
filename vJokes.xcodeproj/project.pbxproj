@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4356E9B92410061D0079ED0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4356E9B82410061D0079ED0D /* GoogleService-Info.plist */; };
 		43963842240EBF6B003A6665 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43963841240EBF6B003A6665 /* LocalStore.swift */; };
 		A2CFE6E2328B29D263FEC136 /* Pods_vJokes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADFA67942126D2695A64FAF /* Pods_vJokes.framework */; };
 		EB32E7A22401B4CF004122C0 /* Jokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32E7A12401B4CF004122C0 /* Jokes.swift */; };
+		EB3DDF872415621A004BB973 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB3DDF862415621A004BB973 /* GoogleService-Info.plist */; };
 		EBA717912400DF47002FB53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA717902400DF47002FB53C /* AppDelegate.swift */; };
 		EBA717932400DF47002FB53C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA717922400DF47002FB53C /* SceneDelegate.swift */; };
 		EBA717952400DF47002FB53C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA717942400DF47002FB53C /* ViewController.swift */; };
@@ -26,7 +26,8 @@
 		AA8350B3538D4F4550A0E1DB /* Pods-vJokes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vJokes.debug.xcconfig"; path = "Target Support Files/Pods-vJokes/Pods-vJokes.debug.xcconfig"; sourceTree = "<group>"; };
 		EADFA67942126D2695A64FAF /* Pods_vJokes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vJokes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB32E7A12401B4CF004122C0 /* Jokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jokes.swift; sourceTree = "<group>"; };
-		EBA7178D2400DF47002FB53C /* vJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB3DDF862415621A004BB973 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EBA7178D2400DF47002FB53C /* Dad Jokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dad Jokes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA717902400DF47002FB53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBA717922400DF47002FB53C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EBA717942400DF47002FB53C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +103,7 @@
 		EBA7178E2400DF47002FB53C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EBA7178D2400DF47002FB53C /* vJokes.app */,
+				EBA7178D2400DF47002FB53C /* Dad Jokes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,8 +111,8 @@
 		EBA7178F2400DF47002FB53C /* vJokes */ = {
 			isa = PBXGroup;
 			children = (
+				EB3DDF862415621A004BB973 /* GoogleService-Info.plist */,
 				4356E9BA24100D610079ED0D /* Network */,
-				4356E9B82410061D0079ED0D /* GoogleService-Info.plist */,
 				43963840240EBF57003A6665 /* Support */,
 				43217C5A24058F4C00C69754 /* Views */,
 				EB32E7A02401B132004122C0 /* UI */,
@@ -151,7 +152,7 @@
 			);
 			name = vJokes;
 			productName = vJokes;
-			productReference = EBA7178D2400DF47002FB53C /* vJokes.app */;
+			productReference = EBA7178D2400DF47002FB53C /* Dad Jokes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -193,8 +194,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA7179D2400DF4C002FB53C /* LaunchScreen.storyboard in Resources */,
+				EB3DDF872415621A004BB973 /* GoogleService-Info.plist in Resources */,
 				EBA7179A2400DF4C002FB53C /* Assets.xcassets in Resources */,
-				4356E9B92410061D0079ED0D /* GoogleService-Info.plist in Resources */,
 				EBA717982400DF47002FB53C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -382,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -405,7 +406,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pat.vJokes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dad Jokes";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,7 +425,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pat.vJokes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dad Jokes";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
